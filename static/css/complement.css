@@ -121,6 +121,12 @@ body {
 }
 
 /*------ mobile -------*/
+.m-shadow-small {
+    -webkit-box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important; /* 适配chrome等浏览器特有属性 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
+}
+
+/*------ mobile -------*/
 @media screen and (max-width: 768px) {
     .m-mobile-hide {
         display: none !important;
@@ -129,6 +135,10 @@ body {
         display: block !important;
     }
     .m-padded-lr-response-huge {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .m-mobile-lr-clear {
         padding-left: 0 !important;
         padding-right: 0 !important;
     }

@@ -53,6 +53,10 @@ body {
     margin-top: 0.3em !important;
     margin-bottom: 0.3em !important;
 }
+.m-margin-tb-small {
+    margin-top: 0.5em !important;
+    margin-bottom: 0.5em !important;
+}
 .m-margin-top-small {
     margin-top: 0.5em !important;
 }
@@ -64,6 +68,13 @@ body {
 }
 .m-margin-bottom-small {
     margin-bottom: 0.5em !important;
+}
+.m-margin-lr {
+    margin-left: 1em !important;
+    margin-right: 1em !important;
+}
+.m-margin {
+    margin: 1em !important;
 }
 
 /*------ text -------*/

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--  移动端适配  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--  CDN导入样式  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.2.4/dist/semantic.min.css">
+    <!--  导入自定义css  -->
+    <link rel="stylesheet" href="./static/css/complement.css">
+    <title>博客详情</title>
+</head>
+<body>
+
+    <!--导航-->
+    <nav class="ui inverted attached segment m-padded-tb-mini">
+        <div class="ui container">
+            <!-- stackable 可堆叠的，移动端的时候可自适应 -->
+            <div class="ui inverted secondary stackable menu">
+                <h2 class="ui teal header item">Blog</h2>
+                <!-- m-item 为选择器定位 -->
+                <a href="#" class="m-item item m-mobile-hide"><i class="small home icon"></i>首页</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="small idea icon"></i>分类</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="small tags icon"></i>标签</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="small clone icon"></i>归档</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="small info icon"></i>关于我</a>
+                <div class="right m-item item m-mobile-hide">
+                    <!-- 不加 icon 的话，图标显示与搜索框不是一个整体 -->
+                    <div class="ui icon inverted transparent input">
+                        <input type="text" placeholder="Search...">
+                        <i class="search icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- menu toggle没有样式，只是为了选择器定位 -->
+        <a href="#" class="ui menu toggle black icon button m-top-right m-mobile-show">
+            <i class="sidebar icon"></i>
+        </a>
+    </nav>
+
+    <!--中间内容-->
+    <div class="m-container-small m-padded-tb-big">
+        <div class="ui container">
+            <div class="ui top attached segment">
+                <div class="ui horizontal link list">
+                    <div class="item">
+                        <img src="https://picsum.photos/id/1/100/100" alt="" class="ui avatar image">
+                        <!-- 加content才能显示在一行 -->
+                        <div class="content"><a href="#" class="header">colm</a></div>
+                    </div>
+                    <div class="item">
+                        <i class="calendar icon"></i> 2020-12-11
+                    </div>
+                    <div class="item">
+                        <i class="eye icon"></i> 123
+                    </div>
+                </div>
+            </div>
+            <!-- 图片区域 -->
+            <div class="ui attached segment">
+                <img src="https://picsum.photos/id/1/800/450" alt="" class="ui fluid rounded image">
+            </div>
+            <!-- 博客正文 -->
+            <div class="ui attached padded segment">
+                <div class="ui right aligned basic segment">
+                    <div class="ui orange basic label">原创</div>
+                </div>
+                <!-- 标题 -->
+                <h2 class="ui center aligned header">加油特种兵</h2>
+                <br>
+                <!-- 正文 -->
+                <div id="content" class="m-padded-lr-response-huge m-padded-tb-large">
+                    <p>最近我们家在装修，现在已经装得差不多了，但有很多不满意的地方。今天写篇文章跟大家分享一下，希望以后你们装修的时候可以避免踩坑</p>
+                    <h2>1</h2>
+                    <p>我们这套房子是精装修的，当初买房时，一平米有2000多的装修费，整套房出了三十多万的装修费。本来以为三十多万应该装得还不错，但收房时发现，这哪是精装修啊，根本就是最便宜的简装。</p>
+                    <h2>1</h2>
+                    <p>我们这套房子是精装修的，当初买房时，一平米有2000多的装修费，整套房出了三十多万的装修费。本来以为三十多万应该装得还不错，但收房时发现，这哪是精装修啊，根本就是最便宜的简装。</p>
+                    <h2>1</h2>
+                    <p>我们这套房子是精装修的，当初买房时，一平米有2000多的装修费，整套房出了三十多万的装修费。本来以为三十多万应该装得还不错，但收房时发现，这哪是精装修啊，根本就是最便宜的简装。</p>
+                    <h2>1</h2>
+                    <p>我们这套房子是精装修的，当初买房时，一平米有2000多的装修费，整套房出了三十多万的装修费。本来以为三十多万应该装得还不错，但收房时发现，这哪是精装修啊，根本就是最便宜的简装。</p>
+                </div>
+                <!-- 标签 -->
+                <div class="m-padded-lr-response-huge">
+                    <div class="ui basic teal left pointing label">方法论</div>
+                </div>
+                <!-- 赞赏button -->
+                <div class="ui center aligned basic segment">
+                    <button id="payButton" class="ui orange basic circular button">赞赏</button>
+                </div>
+                <!-- popup -->
+                <div class="ui payQR flowing popup transition hidden">
+                    <!-- 弹出内容 -->
+                    <div class="ui orange basic label">
+                        <!-- font-size: inherit 继承父元素 -->
+                        <div class="ui images" style="font-size: inherit !important;">
+                            <div class="image">
+                                <img src="./static/images/myblog.png" alt="" class="ui rounded bordered image" style="width: 120px;">
+                                <!-- .ui.images {font-size: 0;} 会把文字大小设为0 -->
+                                <div>AliPay</div>
+                            </div>
+                            <div class="image">
+                                <img src="./static/images/myblog.png" alt="" class="ui rounded bordered image" style="width: 120px;">
+                                <div>WeChart</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 信息 -->
+            <div class="ui attached positive message">
+                <div class="ui middle aligned grid">
+                    <!-- wide 要在 eleven后不然不好使 -->
+                    <div class="ui eleven wide column">
+                        <ui class="list">
+                            <li>作者：xxx</li>
+                            <li>发表时间：xxxx</li>
+                            <li>版权说明：自由转载-非商用-非衍生-保持署名</li>
+                            <li>公众号转载：xxxx</li>
+                        </ui>
+                    </div>
+                    <div class="ui five wide column">
+                        <!-- floated rounded 向右侧浮动 -->
+                        <img src="./static/images/myblog.png" alt="" class="ui right floated rounded bordered image" style="width: 110px">
+                    </div>
+                </div>
+            </div>
+            <!-- 留言 -->
+            <div class="ui bottom attached segment">
+                <div class="ui teal segment">
+                    <!-- comment 组件 -->
+                    <div class="ui threaded comments">
+                        <h3 class="ui dividing header">Comments</h3>
+                        <div class="comment">
+                            <a class="avatar">
+                                <img src="https://picsum.photos/id/1/100/100">
+                            </a>
+                            <div class="content">
+                                <a class="author">Matt</a>
+                                <div class="metadata">
+                                    <span class="date">今天 5:42PM</span>
+                                </div>
+                                <div class="text">
+                                    How artistic!
+                                </div>
+                                <div class="actions">
+                                    <a class="reply">回复</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <a class="avatar">
+                                <img src="https://picsum.photos/id/1/100/100">
+                            </a>
+                            <div class="content">
+                                <a class="author">Elliot Fu</a>
+                                <div class="metadata">
+                                    <span class="date">昨天 12:30AM</span>
+                                </div>
+                                <div class="text">
+                                    <p>This has been very useful for my research. Thanks as well!</p>
+                                </div>
+                                <div class="actions">
+                                    <a class="reply">回复</a>
+                                </div>
+                            </div>
+                            <div class="comments">
+                                <div class="comment">
+                                    <a class="avatar">
+                                        <img src="https://picsum.photos/id/1/100/100">
+                                    </a>
+                                    <div class="content">
+                                        <a class="author">Jenny Hess</a>
+                                        <div class="metadata">
+                                            <span class="date">刚刚</span>
+                                        </div>
+                                        <div class="text">
+                                            Elliot you are always so right :)
+                                        </div>
+                                        <div class="actions">
+                                            <a class="reply">回复</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <a class="avatar">
+                                <img src="https://picsum.photos/id/1/100/100">
+                            </a>
+                            <div class="content">
+                                <a class="author">Joe Henderson</a>
+                                <div class="metadata">
+                                    <span class="date">5天前</span>
+                                </div>
+                                <div class="text">
+                                    Dude, this is awesome. Thanks so much
+                                </div>
+                                <div class="actions">
+                                    <a class="reply">回复</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui form">
+                    <div class="field">
+                        <textarea name="" id="" placeholder="请输入评论信息..."></textarea>
+                    </div>
+                    <div class="fields">
+                        <div class="field m-mobile-wide m-margin-bottom-small">
+                            <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                <input type="text" name="nickname" placeholder="姓名">
+                            </div>
+                        </div>
+                        <div class="field m-mobile-wide m-margin-bottom-small">
+                            <div class="ui left icon input">
+                                <i class="mail icon"></i>
+                                <input type="text" name="email" placeholder="邮箱">
+                            </div>
+                        </div>
+                        <!-- button 想要左右填充满需要 div和button 一起加margin -->
+                        <div class="field m-mobile-wide m-margin-bottom-small">
+                            <button class="ui teal button m-mobile-wide"><i class="edit icon"></i>发布</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br/>
+    <br/>
+    <br/>
+
+    <!--底部-->
+    <footer class="ui inverted vertical segment m-padded-tb-massive">
+        <!-- 样式之间顺序需要注意center aligned反过来不行 -->
+        <div class="ui center aligned container">
+            <div class="ui inverted divided stackable grid">
+                <div class="three wide column">
+                    <div class="ui inverted link list">
+                        <div class="item">
+                            <img title="hello!" src="./static/images/myblog.png" alt="Contact me" class="ui rounded image" style="width: 110px">
+                        </div>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced">最新博客</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">用户故事</a>
+                        <a href="#" class="item">用户故事</a>
+                        <a href="#" class="item">用户故事</a>
+                    </div>
+                </div><div class="three wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced">联系我</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">WeChat: xxxxx</a>
+                        <a href="#" class="item">Mobile: xxxxx</a>
+                        <a href="#" class="item">QQ: xxxxx</a>
+                    </div>
+                </div>
+                <div class="seven wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced">Colm Alex</h4>
+                    <p class="m-text-thin m-text-spaced m-opacity-mini">我也曾把光阴浪费甚至莽撞到视死如归，只因爱上你才渴望长命百岁。——陈小春《相依为命》</p>
+                </div>
+            </div>
+            <!-- 分割线 -->
+            <div class="ui inverted section divider"></div>
+            <p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright © 2019 - 2020 Colm Alex Design by Lirenmi Build by Colm Alex</p>
+        </div>
+    </footer>
+
+    <!-- 注意导入顺序，许多UI框架都需要先导入jQuery，Semantic UI也是这样 -->
+    <!-- CDN导入jquery -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <!-- CDN导入js -->
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script>
+        $('.menu.toggle').click(function(){
+            $('.m-item').toggleClass('m-mobile-hide');
+        });
+        $('#payButton').popup({
+            popup : $('.payQR.popup'),
+            on : 'click',
+            position : 'bottom center'
+        });
+    </script>
+</body>
+</html>

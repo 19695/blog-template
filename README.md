@@ -67,3 +67,23 @@ git commit --amend
 此时会进入默认vim编辑器，修改注释完毕后保存就好了。
 
 参考：https://www.cnblogs.com/lfxiao/p/9378763.html
+
+
+
+## 插件集成
+
+* [编辑器 MarkDown](https://pandao.github.io/editor.md/)
+* 内容排版 typo.css
+* 动画 animate.css
+* 代码高亮 prism
+* 滚动侦测 waypoints
+* 平滑滚动 jquery.scrollTo
+* 目录生成 Tocbot
+* 二维码生成 qrcode.js
+
+
+
+自己的想法
+
+* mind map 》》》gitmind https://gitmind.cn/
+

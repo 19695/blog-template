@@ -65,3 +65,5 @@ git commit --amend
 ```
 
 此时会进入默认vim编辑器，修改注释完毕后保存就好了。
+
+参考：https://www.cnblogs.com/lfxiao/p/9378763.html

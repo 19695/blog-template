@@ -9,6 +9,9 @@ body {
 .m-padded-tiny {
     padding: 0.3em !important;
 }
+.m-padded-small {
+    padding: 0.5em !important;
+}
 .m-padded-tb-mini {
     /*  1em 为14个像素  */
     /*  ui自带的样式级别很高，需要提高自定义样式的级别  */

@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.2.4/dist/semantic.min.css">
     <!--  导入自定义css  -->
     <link rel="stylesheet" href="./static/css/complement.css">
-    <!-- typo -->
+    <!-- 内容排版 -->
     <link rel="stylesheet" href="./static/css/typo.css">
-    <!-- animate -->
+    <!-- 动画效果 -->
     <link rel="stylesheet" href="./static/css/animate.min.css">
-    <!-- prism -->
+    <!-- 代码高亮 -->
     <link rel="stylesheet" href="./static/lib/prism/prism.css">
-    <!-- tocbot -->
+    <!-- 目录生成 -->
     <link rel="stylesheet" href="./static/lib/tocbot/tocbot.css">
     <title>博客详情</title>
 </head>
@@ -48,7 +48,7 @@
     </nav>
 
     <!--中间内容-->
-    <div class="m-container m-padded-tb-big animate__animated animate__fadeIn">
+    <div id="waypoint" class="m-container m-padded-tb-big animate__animated animate__fadeIn">
         <div class="ui container">
             <div class="ui top attached segment">
                 <div class="ui horizontal link list">
@@ -612,22 +612,24 @@ h5,h6{font-size:1em;}
     </div>
 
     <!-- toolbar -->
-    <div class="m-padded m-fixed m-bottom-right">
+    <div id="toolbar" class="m-padded m-fixed m-bottom-right" style="display: none">
         <div class="ui vertical icon buttons">
             <button class="ui teal button m-toc-btn">目录</button>
             <a href="#comment-container" class="ui teal button">留言</a>
-            <button class="ui icon button">
-                <i class="weixin icon"></i>
-            </button>
-            <a href="#" class="ui icon button">
-                <i class="chevron up icon"></i>
-            </a>
+            <button class="ui icon button wechat"><i class="weixin icon"></i></button>
+<!--            <a href="#" class="ui icon button"><i class="chevron up icon"></i></a>-->
+            <button id="to-top-btn" class="ui icon button"><i class="chevron up icon"></i></button>
         </div>
     </div>
     
     <div class="ui toc-container flowing popup transition hidden" style="width: 280px !important">
         <!-- 生成目录 -->
         <div class="js-toc"></div>
+    </div>
+
+    <!-- 不加宽度，二维码从侧面弹不出来 -->
+    <div id="qrcode" class="ui flowing popup transition hidden wechat-qr" style="width: 130px !important">
+<!--        <img src="./static/images/myblog.png" alt="" class="ui rounded image" style="width: 120px" title="扫码使用手机查看更方便！">-->
     </div>
 
     <br/>
@@ -677,10 +679,16 @@ h5,h6{font-size:1em;}
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
     <!-- CDN导入js -->
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-    <!-- prism -->
+    <!-- 代码高亮 -->
     <script src="./static/lib/prism/prism.js"></script>
-    <!-- tocbot -->
+    <!-- 目录生成 -->
     <script src="./static/lib/tocbot/tocbot.min.js"></script>
+    <!-- 二维码生成 -->
+    <script src="./static/lib/qrcode/qrcode.min.js"></script>
+    <!-- 滚动效果 -->
+    <script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+    <!-- 滚动侦测 -->
+    <script src="./static/lib/waypoints/jquery.waypoints.min.js"></script>
     <script>
 
         /* 初始化生成目录 */
@@ -695,19 +703,57 @@ h5,h6{font-size:1em;}
             hasInnerContainers: true,
         });
 
+        /* 手机右上角菜单展开/收起按钮 */
         $('.menu.toggle').click(function(){
             $('.m-item').toggleClass('m-mobile-hide');
         });
+        /* 弹出赞赏 */
         $('#payButton').popup({
             popup : $('.payQR.popup'),
             on : 'click',
             position : 'bottom center'
         });
+        /* 弹出目录 */
         $('.m-toc-btn.button').popup({
             popup : $('.toc-container.popup'),
             on: 'click',
-            position: 'top center'
+            position: 'top right'
         });
+        /* 弹出微信阅读码 */
+        $('.wechat.button').popup({
+            popup : $('.wechat-qr'),
+            // on : 'hover', // 默认
+            on : 'click',
+            position : 'left center'
+        });
+        /* 二维码生成 */
+        var qrcode = new QRCode("qrcode", {
+            text: "http://jindo.dev.naver.com/collie",
+            width: 110,
+            height: 110,
+            colorDark : "#000000",
+            colorLight : "#ffffff",
+            correctLevel : QRCode.CorrectLevel.H
+        });
+        /* 返回顶部滚动效果 */
+        $('#to-top-btn').click(function(){
+            /*
+            * $(element).scrollTo(target[,duration][,settings]);
+            */
+            $(window).scrollTo(0, 500);
+        });
+        /* 滚动侦测 */
+        var waypoint = new Waypoint({
+            element: document.getElementById('waypoint'),
+            handler: function(direction) {
+                console.log('Scrolled to waypoint!  ' + direction)
+                if (direction == 'down') {
+                    $('#toolbar').show(100);
+                } else {
+                    $('#toolbar').hide(500);
+                }
+            }
+        })
     </script>
 </body>
 </html>

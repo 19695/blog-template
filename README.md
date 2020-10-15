@@ -1,4 +1,5 @@
 # blog-template
+
 blog的前台模板
 
 
@@ -87,12 +88,16 @@ git commit --amend
 * [动画 animate.css](https://daneden.github.io/animate.css) 》https://animate.style/
 * [代码高亮 prism](https://github.com/PrismJS/prism) 》 https://prismjs.com/
 * [目录生成 Tocbot](https://tscanlin.github.io/tocbot/)
-* 滚动侦测 waypoints
-* 平滑滚动 jquery.scrollTo
-* 二维码生成 qrcode.js
+* [二维码生成 qrcode.js](https://davidshimjs.github.io/qrcodejs/)
+* [平滑滚动 jquery.scrollTo](https://github.com/flesler/jquery.scrollTo)
+* [滚动侦测 waypoints](http://imakewebthings.com/waypoints/)
 
 
 
 自己的想法
 
-* mind map 》》》gitmind https://gitmind.cn/
+> 我想加一个 思维导图
+>
+> 没找到网上现成的，回头再找找，啥时候做再说
+>
+> 倒是这个可以参考 gitmind https://gitmind.cn/

@@ -12,6 +12,9 @@ body {
 .m-padded-small {
     padding: 0.5em !important;
 }
+.m-padded {
+    padding: 1em !important;
+}
 .m-padded-tb-mini {
     /*  1em 为14个像素  */
     /*  ui自带的样式级别很高，需要提高自定义样式的级别  */
@@ -132,6 +135,14 @@ body {
     position: absolute;
     top: 0;
     right: 0;
+}
+.m-fixed {
+    position: fixed !important;
+    z-index: 1 !important;
+}
+.m-bottom-right {
+    bottom: 0px !important;
+    right: 0 !important;
 }
 
 /*------ mobile -------*/

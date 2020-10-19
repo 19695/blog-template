@@ -101,3 +101,7 @@ git commit --amend
 > 没找到网上现成的，回头再找找，啥时候做再说
 >
 > 倒是这个可以参考 gitmind https://gitmind.cn/
+
+
+通过 WebStorm 建templates文件夹，把页面移到下面，ide会自动处理引用的资源文件
+一定要勾选search for references
